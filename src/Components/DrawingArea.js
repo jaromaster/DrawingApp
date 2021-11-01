@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import Sketch from 'react-p5';
 import "./DrawingArea.css";
 
-const DrawingArea = (props) => {
 
-    // let [penColor, setPenColor] = useState(props.penColor);
+// DrawingArea uses Sketch to draw to canvas
+const DrawingArea = (props) => {
     let penColor = props.penColor;
     let clear = props.clear;
-    let penWidth = 5;
+    let penWidth = props.penWidth;
     let prevMouseX = 0;
     let prevMouseY = 0;
 
@@ -17,6 +17,16 @@ const DrawingArea = (props) => {
         p5.createCanvas(width, height).parent(canvasParentRef);
     }
 
+    const checkIfMouseInCanvas = (mouseX, mouseY) => {
+        const height = document.getElementById("drawingArea").offsetHeight;
+        const width = document.getElementById("drawingArea").offsetWidth;
+        if (mouseX <= width && mouseY <= height && mouseX >= 0 && mouseY >= 0){
+            return true;
+        }
+        return false;
+    }
+
+
     const draw = (p5) => {
         let mouseX = p5.mouseX;
         let mouseY = p5.mouseY;
@@ -25,7 +35,7 @@ const DrawingArea = (props) => {
             p5.clear();
         }
 
-        if (p5.mouseIsPressed){
+        if (p5.mouseIsPressed && checkIfMouseInCanvas(mouseX, mouseY)){
             p5.stroke(penColor);
             p5.strokeWeight(penWidth);
             p5.line(mouseX, mouseY, prevMouseX, prevMouseY);
