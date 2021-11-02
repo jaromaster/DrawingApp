@@ -12,6 +12,7 @@ const Tools = (props) => {
             <input type="color" onChange={(e)=>props.changePenColor(e)} title="change pen color"></input>
             <input type="number" onChange={(e)=>props.changePenWidth(e)} min={minPenWidth} max={maxPenWidth} defaultValue={5} title="change pen width"></input>
             <button onClick={(e)=>props.clearDrawingArea(e)} title="clear screen">CLEAR</button>
+            <button onClick={(e)=>props.changeErase(e)} title="erase mode screen">{props.erase ? "ERASE (ON)" : "ERASE"}</button>
         </div>
     )
 }

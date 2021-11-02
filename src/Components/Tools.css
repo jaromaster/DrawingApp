@@ -2,11 +2,16 @@
     border: 1px solid black;
     border-bottom: none;
     width: 90%;
-    height: 7vh;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
 }
 
 #tools input, button {
+    min-width: fit-content;
     width: 5%;
+}
+
+#tools input {
+    min-width: 5%;
 }
