@@ -1,5 +1,6 @@
 #drawingArea {
     border: 1px solid black;
+    border-radius: 0px 0px 10px 10px; /* radius on bottom corners*/
     width: 90%;
     height: 80vh;
     margin-left: auto;

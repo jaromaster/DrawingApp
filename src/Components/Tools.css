@@ -1,6 +1,8 @@
+/* toolbar style */
 #tools {
     border: 1px solid black;
     border-bottom: none;
+    border-radius: 7px 7px 0px 0px; /* radius on top corners*/
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -8,10 +10,5 @@
 }
 
 #tools input, button {
-    min-width: fit-content;
     width: 5%;
-}
-
-#tools input {
-    min-width: 5%;
 }

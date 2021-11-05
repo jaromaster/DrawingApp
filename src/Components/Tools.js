@@ -9,10 +9,13 @@ const Tools = (props) => {
 
     return (
         <div id="tools">
-            <input type="color" onChange={(e)=>props.changePenColor(e)} title="change pen color"></input>
-            <input type="number" onChange={(e)=>props.changePenWidth(e)} min={minPenWidth} max={maxPenWidth} defaultValue={5} title="change pen width"></input>
-            <button onClick={(e)=>props.clearDrawingArea(e)} title="clear screen">CLEAR</button>
-            <button onClick={(e)=>props.changeErase(e)} title="erase mode screen">{props.erase ? "ERASE (ON)" : "ERASE"}</button>
+            <input type="color" onChange={props.changePenColor} title="change pen color"></input>
+            <input type="number" onChange={props.changePenWidth} min={minPenWidth} max={maxPenWidth} defaultValue={5} title="change pen width"></input>
+            <button onClick={props.clearDrawingArea} title="clear screen">CLEAR</button>
+            <button onClick={props.changeErase} title="erase mode">{props.erase ? "ERASE (ON)" : "ERASE"}</button> {/* toggle erase mode*/}
+            <button id="circleBtn" onClick={props.changeDrawCircle} title="drag to draw circle">{props.drawCircle ? "CIRCLE (ON)" : "CIRCLE"}</button> {/* toggle circle mode*/}
+            <button id="rectBtn" onClick={props.changeDrawRect} title="drag to draw rectangle">{props.drawRect ? "RECT (ON)" : "RECT"}</button> {/* toggle rectangle mode*/}
+            
         </div>
     )
 }
