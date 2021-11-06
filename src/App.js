@@ -11,6 +11,7 @@ function App() {
   const [erase, setErase] = useState(false);
   const [drawCircle, setDrawCircle] = useState(false);
   const [drawRect, setDrawRect] = useState(false);
+  const [drawLine, setDrawLine] = useState(false);
 
   // update pen color
   const changePenColor = (e) => {
@@ -43,14 +44,20 @@ function App() {
     setDrawRect(!drawRect);
   }
 
+  // toggle line drawing
+  const changeDrawLine = (e) => {
+    setDrawLine(!drawLine);
+  }
+
 
   return (
     <div className="App">
       <h1>Drawing App</h1>
 
       <Tools changePenColor={changePenColor} clearDrawingArea={clearDrawingArea} changePenWidth={changePenWidth} changeErase={changeErase} erase={erase}
-      changeDrawCircle={changeDrawCircle} drawCircle={drawCircle} changeDrawRect={changeDrawRect} drawRect={drawRect}/>
-      <DrawingArea penColor={penColor} clear={clear} penWidth={penWidth} erase={erase} drawCircle={drawCircle} drawRect={drawRect}/>
+      changeDrawCircle={changeDrawCircle} drawCircle={drawCircle} changeDrawRect={changeDrawRect} drawRect={drawRect}
+      changeDrawLine={changeDrawLine} drawLine={drawLine}/>
+      <DrawingArea penColor={penColor} clear={clear} penWidth={penWidth} erase={erase} drawCircle={drawCircle} drawRect={drawRect} drawLine={drawLine}/>
     </div>
   );
 }
