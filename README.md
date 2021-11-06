@@ -1,7 +1,13 @@
 # Simple Drawing App
 
-## Supports:
-Normal drawing, erasing, common shapes like circles and rectangles
+## Features:
+- normal drawing
+- erasing
+- common shapes like circles, rectangles, lines
+- exporting as image
 
 ## Planned:
-Filling, undo-button, transparency, exporting, more shapes
+- filling
+- undo-button
+- transparency
+- more shapes
