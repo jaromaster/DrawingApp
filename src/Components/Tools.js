@@ -16,7 +16,7 @@ const Tools = (props) => {
             <button id="circleBtn" onClick={props.changeDrawCircle} title="drag to draw circle">{props.drawCircle ? "CIRCLE (ON)" : "CIRCLE"}</button> {/* toggle circle mode*/}
             <button id="rectBtn" onClick={props.changeDrawRect} title="drag to draw rectangle">{props.drawRect ? "RECT (ON)" : "RECT"}</button> {/* toggle rectangle mode*/}
             <button id="lineBtn" onClick={props.changeDrawLine} title="drag to draw line">{props.drawLine ? "LINE (ON)" : "LINE"}</button> {/* toggle line mode*/}
-            
+            <button id="saveBtn" onClick={props.changeSaveToImg} title="save canvas as image">SAVE</button> {/* save as image (PNG) */}
         </div>
     )
 }

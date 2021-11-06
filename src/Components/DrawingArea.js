@@ -11,6 +11,7 @@ const DrawingArea = (props) => {
     let drawRect = props.drawRect;
     let drawLine = props.drawLine;
     let penWidth = props.penWidth;
+    let saveToImg = props.saveToImg;
     let prevMouseX = 0;
     let prevMouseY = 0;
 
@@ -44,7 +45,12 @@ const DrawingArea = (props) => {
 
         if (clear) {
             p5.clear();
+            clear = false;
+        } else if (saveToImg) {
+            p5.save("image.png");
+            saveToImg = false;
         }
+
 
         // if mouse pressed and in canvas
         // check if mode (erase, circle, rect, line) activated

@@ -12,6 +12,7 @@ function App() {
   const [drawCircle, setDrawCircle] = useState(false);
   const [drawRect, setDrawRect] = useState(false);
   const [drawLine, setDrawLine] = useState(false);
+  const [saveToImg, setSaveToImg] = useState(false);
 
   // update pen color
   const changePenColor = (e) => {
@@ -49,6 +50,12 @@ function App() {
     setDrawLine(!drawLine);
   }
 
+  // toggle save file
+  const changeSaveToImg = (e) => {
+    setSaveToImg(true);
+    setTimeout(()=> setSaveToImg(false), 10); // wait for setSaveToImg to take effect
+  }
+
 
   return (
     <div className="App">
@@ -56,8 +63,8 @@ function App() {
 
       <Tools changePenColor={changePenColor} clearDrawingArea={clearDrawingArea} changePenWidth={changePenWidth} changeErase={changeErase} erase={erase}
       changeDrawCircle={changeDrawCircle} drawCircle={drawCircle} changeDrawRect={changeDrawRect} drawRect={drawRect}
-      changeDrawLine={changeDrawLine} drawLine={drawLine}/>
-      <DrawingArea penColor={penColor} clear={clear} penWidth={penWidth} erase={erase} drawCircle={drawCircle} drawRect={drawRect} drawLine={drawLine}/>
+      changeDrawLine={changeDrawLine} drawLine={drawLine} changeSaveToImg={changeSaveToImg}/>
+      <DrawingArea penColor={penColor} clear={clear} penWidth={penWidth} erase={erase} drawCircle={drawCircle} drawRect={drawRect} drawLine={drawLine} saveToImg={saveToImg}/>
     </div>
   );
 }

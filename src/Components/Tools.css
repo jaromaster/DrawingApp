@@ -9,6 +9,11 @@
     display: flex;
 }
 
-#tools input, button {
+#tools button {
+    width: 5%;
+    min-width: fit-content;
+}
+
+#tools input {
     width: 5%;
 }
