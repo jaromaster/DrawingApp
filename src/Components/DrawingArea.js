@@ -12,6 +12,7 @@ const DrawingArea = (props) => {
     let drawLine = props.drawLine;
     let penWidth = props.penWidth;
     let saveToImg = props.saveToImg;
+    let alpha = props.alpha.toString(16); // hex string (to simply append it to penColor)
     let prevMouseX = 0;
     let prevMouseY = 0;
 
@@ -68,6 +69,7 @@ const DrawingArea = (props) => {
                 dragEndPos = [mouseX, mouseY];
             // standard drawing
             }else{
+                // p5.stroke(penColor + alpha);
                 p5.stroke(penColor);
                 p5.strokeWeight(penWidth);
                 p5.line(mouseX, mouseY, prevMouseX, prevMouseY);
@@ -88,8 +90,8 @@ const DrawingArea = (props) => {
                 const radius = calculateDistance(x1,y1,x2,y2) // distance between starting position, ending position
 
                 // draw circle
-                p5.stroke(penColor);
-                p5.fill(penColor);
+                p5.noStroke();
+                p5.fill(penColor + alpha);
                 p5.circle((x1+x2)/2, (y1+y2)/2, radius); // draw circle 
                 dragStartPos = [0, 0]; // reset drag start position
                 dragEndPos = [0, 0]; // reset drag end position
@@ -98,8 +100,8 @@ const DrawingArea = (props) => {
             } else if (drawRect){
 
                 // draw rectangle
-                p5.stroke(penColor);
-                p5.fill(penColor);
+                p5.noStroke();
+                p5.fill(penColor + alpha);
                 p5.rect(x1, y1, x2-x1, y2-y1); // draw rectangle
                 dragStartPos = [0, 0]; // reset drag start position
                 dragEndPos = [0, 0]; // reset drag end position
@@ -108,7 +110,7 @@ const DrawingArea = (props) => {
             } else if (drawLine) {
 
                 // draw line
-                p5.stroke(penColor);
+                p5.stroke(penColor + alpha);
                 p5.strokeWeight(penWidth);
                 p5.line(x1, y1, x2, y2) // draw line
                 dragStartPos = [0, 0]; // reset drag start position

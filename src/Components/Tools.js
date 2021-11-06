@@ -6,6 +6,8 @@ import "./Tools.css";
 const Tools = (props) => {
     const minPenWidth = 1;
     const maxPenWidth = 30;
+    const minAlpha = 0;
+    const maxAlpha = 255;
 
     return (
         <div id="tools">
@@ -17,6 +19,7 @@ const Tools = (props) => {
             <button id="rectBtn" onClick={props.changeDrawRect} title="drag to draw rectangle">{props.drawRect ? "RECT (ON)" : "RECT"}</button> {/* toggle rectangle mode*/}
             <button id="lineBtn" onClick={props.changeDrawLine} title="drag to draw line">{props.drawLine ? "LINE (ON)" : "LINE"}</button> {/* toggle line mode*/}
             <button id="saveBtn" onClick={props.changeSaveToImg} title="save canvas as image">SAVE</button> {/* save as image (PNG) */}
+            <input type="number" onChange={props.changeAlpha} min={minAlpha} max={maxAlpha} defaultValue={maxAlpha} title="set shape transparency"></input>
         </div>
     )
 }
