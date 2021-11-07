@@ -5,9 +5,9 @@
 - erasing
 - common shapes like circles, rectangles, lines
 - exporting as image
+- transparency
 
 ## Planned:
 - filling
 - undo-button
-- transparency
 - more shapes
