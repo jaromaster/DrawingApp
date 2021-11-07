@@ -2,18 +2,41 @@
 #tools {
     border: 1px solid black;
     border-bottom: none;
-    border-radius: 7px 7px 0px 0px; /* radius on top corners*/
+    border-radius: 7px 7px 0px 0px; /* radius on top corners */
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
 }
 
-#tools button {
+/* css for buttons in toolbar */
+#tools .toolsButton {
+    border: none; /* reset border */
     width: 5%;
+    background-color: lightgray;
     min-width: fit-content;
+    border-right: 1px solid black;
+    padding: 2px;
+    font-size: medium;
 }
 
-#tools input {
+/* css for input fields in toolbar */
+#tools .toolsInput {
+    border: none; /* reset border */
     width: 5%;
+    background-color: lightgray;
+    border-right: 1px solid black;
+    padding: 2px;
+    font-size: medium;
+}
+
+/* left most item in toolbar has border-radius in top left corner */
+/* else it would overlap toolbars border */
+#tools #firstInToolbar {
+    border-radius: 7px 0px 0px 0px;
+}
+
+/* change background-color on hover */
+#tools .toolsButton:hover,  .toolsInput:hover {
+    background-color: grey;
 }

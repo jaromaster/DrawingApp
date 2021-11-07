@@ -5,6 +5,7 @@ import Tools from "./Components/Tools";
 
 
 function App() {
+  // states
   const [penColor, setPenColor] = useState("#000000");
   const [penWidth, setPenWidth] = useState(5);
   const [clear, setClear] = useState(false);
